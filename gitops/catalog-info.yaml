@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hnejb9x1u-python-gitops
+  description: This is GitOps manifest for hnejb9x1u-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hnejb9x1u-python
+    backstage.io/kubernetes-id: hnejb9x1u-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hnejb9x1u-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hnejb9x1u-python
